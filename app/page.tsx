@@ -1,6 +1,7 @@
 export const dynamic = "force-dynamic";
 
 import Image from "next/image";
+import BackgroundVideo from "@/components/BackgroundVideo";
 import Nav from "@/components/Nav";
 import WardMarquee from "@/components/WardMarquee";
 import MissionDome from "@/components/MissionDome";
@@ -259,18 +260,10 @@ export default async function Home() {
       {/* HERO */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0">
-          <video
+          <BackgroundVideo
             src="/videos/flag.mp4"
-            autoPlay
-            muted
-            loop
-            playsInline
-            controls={false}
-            disablePictureInPicture
-            disableRemotePlayback
-            aria-hidden="true"
-            tabIndex={-1}
-            className="bg-video pointer-events-none absolute inset-0 h-full w-full object-cover opacity-90"
+            poster="/videos/flag-poster.jpg"
+            className="absolute inset-0 h-full w-full object-cover opacity-90"
           />
           <div className="absolute inset-0 bg-white/45" />
         </div>
@@ -500,34 +493,18 @@ export default async function Home() {
         {/* Narrow lockup on phones, wide one from md up — each at its own ratio
             so the mask never stretches the type. */}
         <div className="relative mx-auto max-w-5xl px-6 aspect-[820/760] md:hidden">
-          <video
+          <BackgroundVideo
             src="/videos/aerial.mp4"
-            autoPlay
-            muted
-            loop
-            playsInline
-            controls={false}
-            disablePictureInPicture
-            disableRemotePlayback
-            aria-hidden="true"
-            tabIndex={-1}
-            className="bg-video pointer-events-none absolute inset-0 h-full w-full object-cover"
+            poster="/videos/aerial-poster.jpg"
+            className="absolute inset-0 h-full w-full"
             style={maskVideoStyle(maskDataUriNarrow)}
           />
         </div>
         <div className="relative mx-auto max-w-5xl lg:max-w-6xl px-6 aspect-[1920/620] hidden md:block">
-          <video
+          <BackgroundVideo
             src="/videos/aerial.mp4"
-            autoPlay
-            muted
-            loop
-            playsInline
-            controls={false}
-            disablePictureInPicture
-            disableRemotePlayback
-            aria-hidden="true"
-            tabIndex={-1}
-            className="bg-video pointer-events-none absolute inset-0 h-full w-full object-cover"
+            poster="/videos/aerial-poster.jpg"
+            className="absolute inset-0 h-full w-full"
             style={maskVideoStyle(maskDataUri)}
           />
         </div>
