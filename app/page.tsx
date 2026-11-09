@@ -265,7 +265,12 @@ export default async function Home() {
             muted
             loop
             playsInline
-            className="absolute inset-0 h-full w-full object-cover opacity-90"
+            controls={false}
+            disablePictureInPicture
+            disableRemotePlayback
+            aria-hidden="true"
+            tabIndex={-1}
+            className="bg-video pointer-events-none absolute inset-0 h-full w-full object-cover opacity-90"
           />
           <div className="absolute inset-0 bg-white/45" />
         </div>
@@ -501,7 +506,12 @@ export default async function Home() {
             muted
             loop
             playsInline
-            className="absolute inset-0 h-full w-full object-cover"
+            controls={false}
+            disablePictureInPicture
+            disableRemotePlayback
+            aria-hidden="true"
+            tabIndex={-1}
+            className="bg-video pointer-events-none absolute inset-0 h-full w-full object-cover"
             style={maskVideoStyle(maskDataUriNarrow)}
           />
         </div>
@@ -512,7 +522,12 @@ export default async function Home() {
             muted
             loop
             playsInline
-            className="absolute inset-0 h-full w-full object-cover"
+            controls={false}
+            disablePictureInPicture
+            disableRemotePlayback
+            aria-hidden="true"
+            tabIndex={-1}
+            className="bg-video pointer-events-none absolute inset-0 h-full w-full object-cover"
             style={maskVideoStyle(maskDataUri)}
           />
         </div>

@@ -140,3 +140,16 @@ body {
     animation: none;
   }
 }
+
+/* Decorative background videos: hide the native play/pause overlay that
+   WebKit and Brave on iOS draw over autoplaying video. */
+.bg-video::-webkit-media-controls,
+.bg-video::-webkit-media-controls-panel,
+.bg-video::-webkit-media-controls-play-button,
+.bg-video::-webkit-media-controls-start-playback-button,
+.bg-video::-webkit-media-controls-overlay-play-button,
+.bg-video::-webkit-media-controls-enclosure {
+  display: none !important;
+  opacity: 0 !important;
+  -webkit-appearance: none;
+}
