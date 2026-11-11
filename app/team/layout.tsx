@@ -20,7 +20,7 @@ export default function TeamLayout({ children }: { children: React.ReactNode }) 
   const router = useRouter();
   const [menuOpen, setMenuOpen] = useState(false);
 
-  if (pathname === "/team/login") return <>{children}</>;
+  if (pathname === "/team/login" || pathname === "/login") return <>{children}</>;
 
   async function handleLogout() {
     await fetch("/api/team/logout", { method: "POST" });

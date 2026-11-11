@@ -30,7 +30,13 @@ export async function generateMetadata({
   return {
     title,
     description,
-    openGraph: { title, description, type: "article" },
+    alternates: { canonical: `/news/${slug}` },
+    openGraph: {
+      title,
+      description,
+      type: "article",
+      images: post.image_url ? [{ url: post.image_url }] : undefined,
+    },
   };
 }
 
@@ -43,8 +49,32 @@ export default async function NewsArticlePage({
   const post = await getPost(slug);
   if (!post) notFound();
 
+  const articleJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "NewsArticle",
+    headline: post.title,
+    description: post.excerpt || post.body?.slice(0, 160) || "",
+    datePublished: post.published_date || post.created_at,
+    dateModified: post.updated_at || post.created_at,
+    image: post.image_url ? [post.image_url] : undefined,
+    author: {
+      "@type": "Organization",
+      name: "Samuel Sparks for 7th Ward Alderman",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "Samuel Sparks for 7th Ward Alderman",
+      url: "https://sparksforchicago.org",
+    },
+    mainEntityOfPage: `https://sparksforchicago.org/news/${slug}`,
+  };
+
   return (
     <main id="top" className="flex flex-col">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
       <section className="relative isolate bg-white">
         <Nav />
 

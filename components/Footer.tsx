@@ -136,7 +136,7 @@ export default async function Footer() {
                 Terms of Use
               </a>
               <a
-                href="/team"
+                href="https://teams.sparksforchicago.org"
                 className="text-xs text-white/30 transition-colors duration-300 hover:text-white"
               >
                 Team Portal

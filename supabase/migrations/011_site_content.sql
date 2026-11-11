@@ -30,7 +30,7 @@ A copy of our report filed with the State Board of Elections is (or will be) ava
 3. I am a U.S. citizen or lawfully admitted permanent resident (i.e., green card holder).
 4. I understand that by ordinance of the City of Chicago, no lobbyist registered with the Board of Ethics, or person who has done business with City within the preceding four reporting years, or person who is seeking to do business with the City, shall contribute over $1,500 during a calendar year. This includes persons doing or seeking to do business with the: City of Chicago, Chicago Transit Authority, Board of Education, Chicago Park District, Chicago City Colleges, Metropolitan Pier and Exposition Authority, Chicago Housing Authority, or Public Building Commission.
 
-Americans living abroad may only contribute through ActBlue while physically in the United States. By proceeding with this transaction, you agree to ActBlue''s terms & conditions.'
+Americans living abroad may only contribute while physically in the United States. By proceeding with this transaction, you agree to PayPal''s terms & conditions.'
 ),
 (
   'privacy_policy',

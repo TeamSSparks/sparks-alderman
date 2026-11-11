@@ -16,6 +16,7 @@ const DESCRIPTION =
 export const metadata: Metadata = {
   title: TITLE,
   description: DESCRIPTION,
+  alternates: { canonical: "/events" },
   openGraph: {
     title: TITLE,
     description: DESCRIPTION,
@@ -47,8 +48,32 @@ async function getEvents() {
 export default async function EventsPage() {
   const events = await getEvents();
 
+  const eventsJsonLd = events.map((e) => ({
+    "@context": "https://schema.org",
+    "@type": "Event",
+    name: e.title,
+    startDate: e.eventDate,
+    location: {
+      "@type": "Place",
+      name: e.where,
+      address: e.where,
+    },
+    description: e.description || undefined,
+    organizer: {
+      "@type": "Organization",
+      name: "Samuel Sparks for 7th Ward Alderman",
+      url: "https://sparksforchicago.org",
+    },
+  }));
+
   return (
     <main id="top" className="flex flex-col">
+      {eventsJsonLd.length > 0 && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(eventsJsonLd) }}
+        />
+      )}
       <section className="relative isolate">
         <Nav />
 

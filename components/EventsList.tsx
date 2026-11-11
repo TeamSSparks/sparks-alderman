@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 
 import JoinMovementForm from "@/components/JoinMovementForm";
+import Linkify from "@/components/Linkify";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 
@@ -91,7 +92,7 @@ export function EventModal({ event, onClose }: { event: SparkEvent; onClose: () 
 
         {event.description && (
           <p className="mt-6 text-sm text-neutral-600 leading-relaxed">
-            {event.description}
+            <Linkify text={event.description} />
           </p>
         )}
 
